@@ -10,6 +10,7 @@ using ConsoleApp1.StudentService.Interface;
 
 public class Program
 {
+    // Initializes the Services
     private static readonly IBook bookService = new BookService();
     private static readonly IEmail emailService = new EmailExtractorService();
     private static readonly IStudent studentService = new StudentService();
