@@ -35,18 +35,19 @@ namespace ConsoleApp1.BookService.Implementation
         // Write the book details to file
         public void WriteToFile(Book book, string filePath)
         {
-            ValidateBook(book);
             File.WriteAllText(filePath, book.ToString());
         }
 
         // Read the book details from the file
         public Book ReadFromFile(string filePath)
         {
-            string[] lines = File.ReadAllLines(filePath);
+            var lines = File.ReadAllLines(filePath);
+
             if (lines.Length < 6)
             {
                 throw new InvalidOperationException("The file format is incorrect or incomplete. Please ensure the file contains all the required book information.");
             }
+
             return new Book
             {
                 Title = lines[0],
