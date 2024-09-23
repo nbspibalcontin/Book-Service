@@ -35,6 +35,12 @@ namespace ConsoleApp1.BookService.Implementation
         // Write the book details to file
         public void WriteToFile(Book book, string filePath)
         {
+            // Validate the filePath
+            if (string.IsNullOrWhiteSpace(filePath))
+            {
+                throw new ArgumentException("The file path cannot be null or empty.", nameof(filePath));
+            }
+
             File.WriteAllText(filePath, book.ToString());
         }
 
