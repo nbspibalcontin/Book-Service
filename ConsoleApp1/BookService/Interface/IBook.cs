@@ -8,7 +8,6 @@ namespace ConsoleApp1.BookService.Interface
 {
     public interface IBook
     {
-        void ValidateBook(Book book);
         void WriteToFile(Book book, string filePath);
         Book ReadFromFile(string filePath);
     }
